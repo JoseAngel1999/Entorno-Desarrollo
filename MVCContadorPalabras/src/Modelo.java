@@ -1,8 +1,8 @@
 public class Modelo
 {
 
-	public static int cuentaPalabras(String s){   
-		 int conteoPalabras = 0;    
+	public Integer cuentaPalabras(String s){   
+		 Integer conteoPalabras = 0;    
 		    boolean palabra = false;
 		    int finDeLinea = s.length() - 1;
 

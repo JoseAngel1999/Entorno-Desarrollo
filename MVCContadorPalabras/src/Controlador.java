@@ -1,16 +1,18 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.TextEvent;
+import java.awt.event.TextListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class Controlador implements ActionListener, WindowListener
+public class Controlador implements ActionListener, WindowListener, TextListener 
 {
 	Vista objVista = null; 
 	Modelo objModelo = null;
 	public Controlador(Vista objVista, Modelo objModelo) {
 		this.objVista = objVista;
 		this.objModelo = objModelo; 
-		objVista.btn.addActionListener(this);
+		objVista.txt1.addTextListener(this);
 		objVista.addWindowListener(this); 
 	}
 	
@@ -65,14 +67,18 @@ public class Controlador implements ActionListener, WindowListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		if(objVista.btn.equals(e.getSource())) {
-			String numero = ((this.objVista.txt1.getText()));
-			Integer resultado = Modelo.cuentaPalabras(numero);
-			objVista.txt2.setText(resultado.toString());
-		}
+		
 		
 	}
 
 	
+	public void textValueChanged(TextEvent arg0)
+	{
+		if(objVista.txt1.equals(arg0.getSource())) {
+			objVista.txt2.setText(objModelo.cuentaPalabras(objVista.txt1.getText()).toString());
+		}
+		
+	}
+
 
 }

@@ -22,7 +22,6 @@ public class Vista extends JFrame implements WindowListener, ActionListener
 		setLocationRelativeTo(null);
 		this.add(txt1);
 		this.add(txt2);
-		this.add(btn);
 		btn.addActionListener(this);
 		this.addWindowListener(this);
 		setVisible(true);
