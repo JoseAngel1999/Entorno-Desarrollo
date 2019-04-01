@@ -3,6 +3,10 @@ package es.studium.Refactorizacion;
 public class Refactorizacion
 {
 
-	public
+	public double calcularPrecio(int unidades, double precioUnitario) {
+		
+		return precioUnitario;
+		
+	}
 	
 }
